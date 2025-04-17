@@ -10,6 +10,7 @@ This is the backend service for the Video Library app, built with **Node.js**, *
 - REST API to fetch videos
 - Pagination, title search, and sort by title/date
 - Modular architecture: controller → service → repository
+- Input validation with clear error responses
 - Centralized error handling middleware
 - MUI-powered frontend (WIP)
 
@@ -53,10 +54,12 @@ curl "http://localhost:3001/videos?sort_by=title&order=asc&page=2&limit=5"
 - repositories/: SQLite queries and DB access
 - middlewares/: Global error handler
 
-## Next Steps
-- Add filtering by date range and tags
-- Add unit and integration tests with Jest
-- Add OpenAPI docs and request validation (zod or express-validator)
-- Add authentication (admin vs regular user)
-- Enable detailed query logging and metrics
-- Move to TypeScript for type safety and better tooling
+## What was deferred and why
+To stay focused on delivering core functionality and high-quality code within the time limit, the following features were intentionally deferred:
+### Date range filtering: 
+It requires: 
+- Additional query logic to handle ISO date formats in SQLite
+- A proper UX component on the frontend (date pickers, validation)
+### Tag filtering
+Tag data is currently stored as a JSON string in a single column, making efficient filtering non-trivial without schema normalization.
+
