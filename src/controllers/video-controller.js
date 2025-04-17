@@ -1,4 +1,4 @@
-const { fetchVideos } = require('../services/videoService');
+const { fetchVideos } = require('../services/video-service');
 
 const SORT_COLUMNS = {
   CREATED_AT: 'created_at',

@@ -1,7 +1,8 @@
 const express = require('express');
-const { getVideosController } = require('../controllers/videoController');
+const { getVideosController } = require('../controllers/video-controller');
+const { validateVideoQuery } = require('../middlewares/validate-query');
 
 const router = express.Router();
-router.get('/', getVideosController);
+router.get('/', validateVideoQuery, getVideosController);
 
 module.exports = router;

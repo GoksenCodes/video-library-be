@@ -1,4 +1,4 @@
-const { getVideos, getVideoCount } = require('../repositories/videoRepository');
+const { getVideos, getVideoCount } = require('../repositories/video-repository.js');
 
 async function fetchVideos({ page = 1, limit = 10, search = '', sort_by = 'created_at', order = 'DESC' }) {
   const offset = (page - 1) * limit;
