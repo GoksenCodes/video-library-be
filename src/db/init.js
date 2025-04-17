@@ -1,13 +1,14 @@
-const fs = require('fs');
-const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
+const fs = require("fs");
+const path = require("path");
+const sqlite3 = require("sqlite3").verbose();
 
-const dbFile = path.resolve(__dirname, '../../db.sqlite');
+const dbFile = path.resolve(__dirname, "../../db.sqlite");
 const db = new sqlite3.Database(dbFile);
 
-const raw = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/videos.json'), 'utf-8'));
+const raw = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, "../data/videos.json"), "utf-8"),
+);
 const videos = raw.videos;
-
 
 db.serialize(() => {
   db.run(`DROP TABLE IF EXISTS videos`);
@@ -37,7 +38,7 @@ db.serialize(() => {
       video.created_at,
       video.duration,
       video.views,
-      JSON.stringify(video.tags)
+      JSON.stringify(video.tags),
     );
   });
 
