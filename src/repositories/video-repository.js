@@ -1,7 +1,7 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 
-const dbFile = path.resolve(__dirname, '../../../db.sqlite');
+const dbFile = path.resolve(__dirname, '../../db.sqlite');
 const db = new sqlite3.Database(dbFile);
 
 function getVideoCount(search = '') {
