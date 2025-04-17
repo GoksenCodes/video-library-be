@@ -32,8 +32,10 @@ Server runs at: http://localhost:3001
 # 4. Run tests
 npm run test
 
-## API: `GET /videos
 ```
+
+## API: `GET /videos
+
 | Param     | Description                               |
 |-----------|-------------------------------------------|
 | `page`    | Page number (default: 1)                  |
