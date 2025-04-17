@@ -1,11 +1,20 @@
-const { getVideos, getVideoCount } = require('../repositories/video-repository.js');
+const {
+  getVideos,
+  getVideoCount,
+} = require("../repositories/video-repository.js");
 
-async function fetchVideos({ page = 1, limit = 10, search = '', sort_by = 'created_at', order = 'DESC' }) {
+async function fetchVideos({
+  page = 1,
+  limit = 10,
+  search = "",
+  sort_by = "created_at",
+  order = "DESC",
+}) {
   const offset = (page - 1) * limit;
 
   const [videos, total] = await Promise.all([
     getVideos({ search, limit, offset, sortBy: sort_by, order }),
-    getVideoCount(search)
+    getVideoCount(search),
   ]);
 
   return {
@@ -14,11 +23,11 @@ async function fetchVideos({ page = 1, limit = 10, search = '', sort_by = 'creat
       total,
       page,
       limit,
-      pages: Math.ceil(total / limit)
-    }
+      pages: Math.ceil(total / limit),
+    },
   };
 }
 
 module.exports = {
-  fetchVideos
+  fetchVideos,
 };

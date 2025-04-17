@@ -12,7 +12,6 @@ This is the backend service for the Video Library app, built with **Node.js**, *
 - Modular architecture: controller → service → repository
 - Input validation with clear error responses
 - Centralized error handling middleware
-- MUI-powered frontend (WIP)
 
 ---
 
@@ -29,6 +28,9 @@ node src/db/init.js
 npm run dev
 
 Server runs at: http://localhost:3001
+
+# 4. Run tests
+npm run test
 
 ## API: `GET /videos
 ```
