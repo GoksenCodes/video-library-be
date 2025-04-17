@@ -10,7 +10,7 @@ const ORDER = {
   DESC: 'DESC'
 };
 
-async function getVideosController(req, res) {
+async function getVideosController(req, res, next) {
   try {
     const {
       page = 1,
