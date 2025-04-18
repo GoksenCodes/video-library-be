@@ -12,7 +12,7 @@ const ORDER = {
 
 async function getVideosController(req, res, next) {
   try {
-    const { page = 1, limit = 10, search = "", sort_by, order } = req.query;
+    const { page = 1, limit = 8, search = "", sort_by, order } = req.query;
 
     const safeSortBy = Object.values(SORT_COLUMNS).includes(sort_by)
       ? sort_by
